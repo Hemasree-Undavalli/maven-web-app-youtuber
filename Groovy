@@ -1,0 +1,15 @@
+pipeline {
+    agent any 
+    stages {
+        stage ('checkout/clone'){
+            steps {
+                git ('https://github.com/Hemasree-Undavalli/maven-web-app-youtuber.git')
+            }
+        }
+        stage ('Bulid'){
+            steps {
+                sh ('mvn clean install')
+            }
+        }
+    }
+}
